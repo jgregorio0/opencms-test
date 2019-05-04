@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group 'dev.jgregorio.opencms'
+version '1.0'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+// https://mvnrepository.com/artifact/dumbster/dumbster
+    testCompile group: 'dumbster', name: 'dumbster', version: '1.6'
+    // https://mvnrepository.com/artifact/org.hsqldb/hsqldb
+    testCompile group: 'org.hsqldb', name: 'hsqldb', version: '2.4.1'
+
+    testCompile fileTree(include: ['*.jar'], dir: 'lib/runtime')
+// https://mvnrepository.com/artifact/org.vaadin.addons/filteringtable
+
+
+    // https://mvnrepository.com/artifact/org.opencms/opencms-core
+    compile group: 'org.opencms', name: 'opencms-core', version: '10.5.4'
+}
